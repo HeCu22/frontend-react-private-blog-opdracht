@@ -1,16 +1,20 @@
 import React from 'react';
-import posts from '../data/posts.json';
+import posts from '../data/posts.json';  /* json file with blog posts  */
 import {useParams, Link} from "react-router-dom";
 
 
 function BlogPost(props) {
+    // console.log('blogpost');
     const { blogid } = useParams(); /*  // parameternaam blogid moet overeenkomen met route pad in App.js */
-    console.log({blogid});
-    console.log(posts);
+
+    // get the blog post passed from the json file
 
     const currentPost = posts.find((post) => {
+
         return post.id === blogid;
     });
+
+    console.log('found', currentPost.id);
 
     return (
         <>

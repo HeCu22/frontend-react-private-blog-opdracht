@@ -2,11 +2,12 @@ import React from 'react';
 import {useHistory} from "react-router-dom";
 
 
-function Login(props) {
+function Login({toggleAuth}) {
+    console.log('login');
     const history = useHistory();
 
     function signIn() {
-
+        toggleAuth(true);
         history.push('/');
     }
     return (

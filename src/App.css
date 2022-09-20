@@ -7,6 +7,58 @@
   pointer-events: none;
 }
 
+nav {
+  background-color: chocolate;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+
+.active-link {
+  border-bottom: 2px solid white;
+  color: cornflowerblue;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+a {
+  color: chocolate;
+  text-transform: capitalize;
+}
+
+nav ul {
+  gap: 20px;
+}
+
+section {
+  margin: 24px 16px;
+}
+
+article {
+  border: 1px solid #ededed;
+  border-radius: 4px;
+  margin: 46px;
+  padding: 24px;
+}
+
+article h1,
+article p {
+  text-transform: capitalize;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

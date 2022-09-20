@@ -3,6 +3,7 @@ import posts from '../data/posts.json';
 import {Link} from "react-router-dom";
 
 function BlogOverview(props) {
+    console.log('blogoverview');
     return (
         <section>
             <h1>Blog overview</h1>

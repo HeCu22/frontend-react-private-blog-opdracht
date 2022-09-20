@@ -1,24 +1,41 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect, useHistory} from "react-router-dom";
+import BlogOverview from "../pages/BlogOverview";
 
-const Navbar = () => {
+const Navbar = ({isAuth, toggleAuth}) => {
+    const history = useHistory();
+    console.log((isAuth))
+
+    function signOut() {
+        toggleAuth(false);
+        history.push('/')
+    }
+
     return (
         <nav>
             <ul>
+
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/blogpost">BlogPost</NavLink>
+                    <NavLink to="/blogpost" activeClassName="active-link">BlogPost</NavLink>
                 </li>
 
                 <li>
-                    <NavLink to="/blogoverview">Overview</NavLink>
+                    <NavLink to="/blogoverview" activeClassName="active-link">Overview</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login">Login</NavLink>
+                    <NavLink to="/login" activeClassName="active-link">Login</NavLink>
                 </li>
-
+                <li>
+                    {isAuth ? <span> Aangelogd </span> : <span> Uitgelogd </span>}
+                </li>
+                <li>
+                    <button disabled={!isAuth} type="button" onClick={signOut}>
+                        Uitloggen
+                    </button>
+                </li>
             </ul>
         </nav>
     );
