@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+nav {
+  background-color: var(--chocolate-web);
+  justify-content: flex-end;
+  min-height: 3vh;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav a {
+  color: var(--cosmic-latte);
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.active-link {
+  border-bottom: 2px solid var(--middle-blue);
+  color: var(--middle-blue);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
+  list-style-type: none;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+a {
+  color: chocolate;
+  text-transform: capitalize;
+}
+
+nav ul {
+  gap: 20px;
+}
+
+section {
+  margin: 24px 16px;
+}
+
+article {
+  border: 1px solid var(--cosmic-latte);
+  border-radius: 4px;
+  margin: 46px;
+  padding: 24px;
+}
+
+article h1,
+article p {
+  text-transform: capitalize;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  width: 177px;
+  height: 20px;
+  margin: 50px 0;
+  background-color: var(--chocolate-traditional);
+  color: var(--cosmic-latte);
+  margin: 5px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+background-color: var(--roman-silver);
+  color: var(--chocolate-traditional);
 }
+
+.error-message, .falsy {
+  font-weight: bold;
+  color: var(--bittersweet-shimmer);
+}
+
+.empty {
+  color: var(--cosmic-latte);
+}
+
+input {
+  width: 300px;
+
+}
+textarea {
+  width: 300px;
+  height: 200px;
+}
+
+
+
