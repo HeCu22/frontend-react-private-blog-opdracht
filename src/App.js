@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import { Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import './App.css';
 import Navbar from "./components/Navbar";
 import BlogPost from "./pages/BlogPost";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import BlogOverview from "./pages/BlogOverview";
+import Blognew from "./pages/Blognew";
 
 
 function App() {
@@ -20,19 +21,24 @@ function App() {
                     <Home/>
                 </Route>
                 <Route path="/login">
-                    <Login toggleAuth={toggleIsAuthenticated}/>
+                    {!isAuthenticated ? <Login auth={isAuthenticated} toggleAuth={toggleIsAuthenticated}/> : <Redirect to="/"/>}
+
 
                 </Route>
 
                 <Route exact path="/blogoverview">
-                    { isAuthenticated ? <BlogOverview/> : <Redirect to="/login"/> }
+                    {isAuthenticated ? <BlogOverview/> : <Redirect to="/blogoverview"/>}
 
                 </Route>
                 <Route exact path="/blogpost/:blogid">
-                    { isAuthenticated ? <BlogPost/> : <Redirect to="/login"/> }
+                    {isAuthenticated ? <BlogPost/> : <Redirect to="/login"/>}
                 </Route>
-                  <Route exact path="/blogpost">
-                   { isAuthenticated ? <BlogOverview/> : <Redirect to="/"/> }
+                <Route exact path="/blogpost">
+                    {isAuthenticated ? <BlogOverview/> : <Redirect to="/"/>}
+                </Route>
+
+                <Route exact path="/blognew">
+                    {isAuthenticated ? <Blognew/> : <Redirect to="/blognew"/>}
                 </Route>
             </Switch>
         </>

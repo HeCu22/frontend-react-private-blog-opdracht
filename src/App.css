@@ -1,34 +1,25 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 nav {
-  background-color: chocolate;
-  display: flex;
+  background-color: var(--chocolate-web);
   justify-content: flex-end;
+  min-height: 3vh;
 
 }
 
 nav a {
-  color: white;
+  color: var(--cosmic-latte);
   font-weight: bold;
 }
 
 .active-link {
-  border-bottom: 2px solid white;
-  color: cornflowerblue;
+  border-bottom: 2px solid var(--middle-blue);
+  color: var(--middle-blue);
 }
 
 nav ul {
   list-style-type: none;
   padding: 0 16px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-basis: 300px;
   flex-grow: 0;
   flex-shrink: 0;
@@ -48,7 +39,7 @@ section {
 }
 
 article {
-  border: 1px solid #ededed;
+  border: 1px solid var(--cosmic-latte);
   border-radius: 4px;
   margin: 46px;
   padding: 24px;
@@ -59,32 +50,42 @@ article p {
   text-transform: capitalize;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  width: 177px;
+  height: 20px;
+  margin: 50px 0;
+  background-color: var(--chocolate-traditional);
+  color: var(--cosmic-latte);
+  margin: 5px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+background-color: var(--roman-silver);
+  color: var(--chocolate-traditional);
 }
+
+.error-message, .falsy {
+  font-weight: bold;
+  color: var(--bittersweet-shimmer);
+}
+
+.empty {
+  color: var(--cosmic-latte);
+}
+
+input {
+  width: 300px;
+
+}
+textarea {
+  width: 300px;
+  height: 200px;
+}
+
+
+

@@ -1,6 +1,5 @@
 import React from 'react';
-import {NavLink, Redirect, useHistory} from "react-router-dom";
-import BlogOverview from "../pages/BlogOverview";
+import {NavLink, useHistory} from "react-router-dom";
 
 const Navbar = ({isAuth, toggleAuth}) => {
     const history = useHistory();
@@ -18,24 +17,25 @@ const Navbar = ({isAuth, toggleAuth}) => {
                 <li>
                     <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/blogpost" activeClassName="active-link">BlogPost</NavLink>
-                </li>
+                {isAuth === true
+                    ? <>
+                        <li>
+                            <NavLink to="/blognew" activeClassName="active-link">Blognew</NavLink>
+                        </li>
 
-                <li>
-                    <NavLink to="/blogoverview" activeClassName="active-link">Overview</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/login" activeClassName="active-link">Login</NavLink>
-                </li>
-                <li>
-                    {isAuth ? <span> Aangelogd </span> : <span> Uitgelogd </span>}
-                </li>
-                <li>
-                    <button disabled={!isAuth} type="button" onClick={signOut}>
-                        Uitloggen
-                    </button>
-                </li>
+                        <li>
+                            <NavLink to="/blogoverview" activeClassName="active-link">BlogOverview</NavLink>
+                        </li>
+                        <li>
+                            <button type="button" onClick={signOut}>
+                                Uitloggen
+                            </button>
+                        </li>
+                    </>
+                    :
+                    <li>  <NavLink to="/login" activeClassName="active-link">Login</NavLink>
+                    </li>
+                }
             </ul>
         </nav>
     );

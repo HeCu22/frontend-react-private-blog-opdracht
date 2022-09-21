@@ -5,7 +5,7 @@ import {useParams, Link} from "react-router-dom";
 
 function BlogPost(props) {
     // console.log('blogpost');
-    const { blogid } = useParams(); /*  // parameternaam blogid moet overeenkomen met route pad in App.js */
+    const {blogid} = useParams(); /*  // parameternaam blogid moet overeenkomen met route pad in App.js */
 
     // get the blog post passed from the json file
 
@@ -18,15 +18,19 @@ function BlogPost(props) {
 
     return (
         <>
-            <h1>post</h1>
-            <h3>{currentPost.date}</h3>
-           <p>blogid: {currentPost.id}</p>
-            <p>title: {currentPost.title}</p>
+            <article>
+                <h1>post</h1>
+                <h3>{currentPost.date}</h3>
+                <p>blogid: {currentPost.id}</p>
+                <p>title: {currentPost.title}</p>
 
-            <p>content: {currentPost.content}</p>
+                <p>content: {currentPost.content}</p>
+            </article>
 
-            <Link to="/">Terug naar Home</Link>
+            <article>
 
+                <Link to="/">Terug naar Home</Link>
+            </article>
         </>
     );
 }

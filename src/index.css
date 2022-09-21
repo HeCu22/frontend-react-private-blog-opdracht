@@ -12,4 +12,17 @@ code {
     monospace;
 }
 
+:root {
+  --chocolate-traditional: #7b3f00ff;
+  --coffee: #6f4e37ff;
+  --chocolate-web: #d2691e;
+  --bluetiful: #3c69e7ff;
+  --roman-silver: #838996ff;
+  --blue-gray: #6699ccff;
+  --middle-blue: #7ed4e6ff;
+  --cosmic-latte: #fff8e7ff;
+  --bittersweet-shimmer: #bf4f51ff;
+  --blood-red: #660000ff;
+}
+
 
